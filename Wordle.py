@@ -24,12 +24,18 @@ def wordle():
                 current_word += gw.get_square_letter(current_row, col)
             print(f"Word: {current_word}")
 
-            if current_word.lower() in FIVE_LETTER_WORDS:
-                gw.show_message('Good job. This is a word.')
-                next_row = current_row+1
-                gw.set_current_row(next_row)
+            word_length = len(current_word.strip())
+            if word_length < 5:
+                gw.show_message('Not enough letters. Please fill in more!')
+                print(f'Word count is {word_length}')
             else:
-                gw.show_message("Not in the word list.")
+                print(f'Word count is {word_length}')
+                if current_word.lower() in FIVE_LETTER_WORDS:
+                    gw.show_message('Good job. This is a word.')
+                    next_row = current_row+1
+                    gw.set_current_row(next_row)
+                else:
+                    gw.show_message("Not in the word list.")
 
     gw = WordleGWindow()
     sRandWord=random.choice(FIVE_LETTER_WORDS)
