@@ -40,11 +40,6 @@ def wordle():
     gw = WordleGWindow()
     sRandWord=random.choice(FIVE_LETTER_WORDS)
     gw.add_enter_listener(enter_action)
-    # for iCountRows in range(N_ROWS):
-    #     for iCountColumns in range(N_COLS):
-    #         gw.set_square_letter(iCountRows, iCountColumns, sRandWord[iCountColumns])
-    #         iCountColumns=iCountColumns+1
-    #     iCountRows=iCountRows+1
 
 # Startup code
 
